@@ -1,29 +1,8 @@
-<!--<jhi-web-category-menu></jhi-web-category-menu>-->
-<!--<div>-->
-<!--    <router-outlet></router-outlet>-->
-<!--</div>-->
-<div class="page-wrapper">
-
-    <!-- MENU SIDEBAR-->
-    <aside class="menu-sidebar d-none d-lg-block">
-
-        <div class="menu-sidebar-content js-scrollbar1">
-            <nav class="navbar-sidebar">
-      <jhi-web-category-menu></jhi-web-category-menu>
-            </nav>
-        </div>
-    </aside>
-    <!-- END MENU SIDEBAR-->
-
-    <div class="page-container">
-        <!-- HEADER DESKTOP-->
-
-        <!-- END HEADER DESKTOP-->
-
-        <!-- MAIN CONTENT-->
+<div class="page">
+    <nav class="category">
+        <jhi-web-category-menu></jhi-web-category-menu>
+    </nav>
+    <div class="product">
         <router-outlet></router-outlet>
-<p>proba</p>
     </div>
 </div>
-
-<!-- ENDS PAGE CONTAINER -->
