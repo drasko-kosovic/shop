@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "shop",
+      "nativeLanguage": "sr"
+    },
+    "jhipsterVersion": "6.10.5",
+    "applicationType": "monolith",
+    "baseName": "shop",
+    "packageName": "shop",
+    "packageFolder": "shop",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NDk3MWQ2Njk5YjJmYThjZjMxZmMzNGMzMDlmZjhjM2NlODM2OWFmYmQ5MGZiNjgxNzEyZjI1YmRkOGNmZTJmYTkzNGNmNzRjYThhOWE4N2EzNWQ0Mjg1YTVhZWQyMGVlZTYxMTkwNGI1YmExNmY2MGI5ODAyNGQ2YzY4ZTZhNTc=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "materia",
+    "clientThemeVariant": "dark",
+    "creationTimestamp": 1613812920299,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "sr",
+    "languages": ["sr", "en"],
+    "blueprints": []
+  }
+}
