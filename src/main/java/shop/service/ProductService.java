@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -51,6 +52,7 @@ public class ProductService {
     }
 
 
+
     /**
      * Get one product by id.
      *
@@ -61,6 +63,12 @@ public class ProductService {
     public Optional<Product> findOne(Long id) {
         log.debug("Request to get Product : {}", id);
         return productRepository.findById(id);
+    }
+
+    @Transactional(readOnly = true)
+    public List<Product> findByProductCategoryId(Long ProductCategoryId) {
+        log.debug("Request to get Product : {}", ProductCategoryId);
+        return productRepository.findByProductCategoryId(ProductCategoryId);
     }
 
     /**
