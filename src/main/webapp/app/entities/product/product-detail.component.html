@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="product">
+            <h2><span jhiTranslate="shopApp.product.detail.title">Product</span> {{ product.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.product.sku">Sku</span></dt>
+                <dd>
+                    <span>{{ product.sku }}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.name">Name</span></dt>
+                <dd>
+                    <span>{{ product.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.description">Description</span></dt>
+                <dd>
+                    <span>{{ product.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.unitPrice">Unit Price</span></dt>
+                <dd>
+                    <span>{{ product.unitPrice }}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.imageUrl">Image Url</span></dt>
+                <dd>
+                    <span>{{ product.imageUrl }}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.active">Active</span></dt>
+                <dd>
+                    <span>{{ product.active }}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.unitsInStock">Units In Stock</span></dt>
+                <dd>
+                    <span>{{ product.unitsInStock }}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.dateCreated">Date Created</span></dt>
+                <dd>
+                    <span>{{ product.dateCreated }}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.lastUpdated">Last Updated</span></dt>
+                <dd>
+                    <span>{{ product.lastUpdated }}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.productCategory">Product Category</span></dt>
+                <dd>
+                    <div *ngIf="product.productCategory">
+                        <a [routerLink]="['/product-category', product.productCategory?.id, 'view']">{{ product.productCategory?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product', product.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+entity ProductCategory {
+  id Long,
+categoryName String
+}
+entity Product {
+  id Long,
+ sku String,
+  name String,
+  description String,
+ unitPrice Double,
+ imageUrl String,
+ active Integer,
+ unitsInStock Integer,
+ dateCreated Instant,
+  lastUpdated Instant
+}
+relationship OneToMany {
+  ProductCategory{Product} to Product{ProductCategory}
+}
+// relationship ManyToOne {
+//   Product{ProductCategory} to ProductCategory{Product}
+// }
+paginate ProductCategory,Product with pagination
+service ProductCategory,Product with serviceClass
+filter Product,ProductCategory
