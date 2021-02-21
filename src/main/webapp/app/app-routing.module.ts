@@ -7,6 +7,7 @@ import { Authority } from 'app/shared/constants/authority.constants';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
 import { AngularComponent } from 'app/angular/angular.component';
+import { WebPageComponent } from 'app/entities/web/web-page/web-page.component';
 
 const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
 
@@ -15,8 +16,12 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
     RouterModule.forRoot(
       [
         {
-          path: 'angular',
-          component: AngularComponent,
+          path: 'web',
+          component: WebPageComponent,
+        },
+        {
+          path: 'web',
+          loadChildren: () => import('./entities/web/web.module').then(m => m.WebModule),
         },
         {
           path: 'admin',
