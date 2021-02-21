@@ -5,9 +5,10 @@ import { WebRoutingModule } from './web-routing.module';
 import { WebPageComponent } from './web-page/web-page.component';
 import { WebCategoryMenuComponent } from './web-category-menu/web-category-menu.component';
 import { WebProductComponent } from './web-product/web-product.component';
+import { WebSearchComponent } from './web-search/web-search.component';
 
 @NgModule({
-  declarations: [WebPageComponent, WebCategoryMenuComponent, WebProductComponent],
+  declarations: [WebPageComponent, WebCategoryMenuComponent, WebProductComponent, WebSearchComponent],
   imports: [CommonModule, WebRoutingModule],
 })
 export class WebModule {}

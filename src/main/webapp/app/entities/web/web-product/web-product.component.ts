@@ -11,34 +11,33 @@ import { WebProductService } from './web-product.service';
 })
 export class WebProductComponent implements OnInit {
   products?: IProduct[];
-  curentId?: number;
-
   constructor(protected productService: WebProductService, protected route: ActivatedRoute) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    // this.curentId = +this.route.snapshot.paramMap.get('id');
-    // eslint-disable-next-line no-console
-    // console.log('broj je -----------' + id);
-    // this.curentId=id;
-    // this.loadPage();
     this.route.queryParams.subscribe(queryParams => {
       // do something with the query params
     });
     this.route.params.subscribe(routeParams => {
-      this.loadPage();
+      this.loadPageCategoryId();
     });
   }
 
-  loadPage(): void {
-    this.productService
-      .queryId(this.route.snapshot.paramMap.get('id'))
-      // .queryId(1951)
-      .subscribe(res => {
-        this.products = res;
+  loadPageCategoryId(): void {
+    this.productService.queryId(this.route.snapshot.paramMap.get('id')).subscribe(res => {
+      this.products = res;
 
-        // eslint-disable-next-line no-console
-        // console.log('to je   ' + res);
-      });
+      // eslint-disable-next-line no-console
+      // console.log('to je   ' + res);
+    });
+  }
+
+  loadPageProductName(): void {
+    this.productService.queryName(this.route.snapshot.paramMap.get('name')).subscribe(res => {
+      this.products = res;
+
+      // eslint-disable-next-line no-console
+      // console.log('to je   ' + res);
+    });
   }
 }

@@ -13,10 +13,16 @@ type EntityArrayResponseType = HttpResponse<IProduct[]>;
 export class WebProductService {
   public resourceUrl = SERVER_API_URL + 'api/products';
   public resourceUrlProductCategoryId = SERVER_API_URL + 'api/products/category?ProductCategoryId=';
+  public resourceUrlProductName = SERVER_API_URL + 'api/products/search?name=';
+
   constructor(protected http: HttpClient) {}
 
   queryId(id: any): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(this.resourceUrlProductCategoryId + id);
+  }
+
+  queryName(name: String): Observable<IProduct[]> {
+    return this.http.get<IProduct[]>(this.resourceUrlProductName + name);
   }
 
   query(): Observable<IProduct[]> {
