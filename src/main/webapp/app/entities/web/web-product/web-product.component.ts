@@ -19,9 +19,15 @@ export class WebProductComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     // this.curentId = +this.route.snapshot.paramMap.get('id');
     // eslint-disable-next-line no-console
-    console.log('broj je -----------' + id);
+    // console.log('broj je -----------' + id);
     // this.curentId=id;
-    this.loadPage();
+    // this.loadPage();
+    this.route.queryParams.subscribe(queryParams => {
+      // do something with the query params
+    });
+    this.route.params.subscribe(routeParams => {
+      this.loadPage();
+    });
   }
 
   loadPage(): void {
