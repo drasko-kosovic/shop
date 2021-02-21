@@ -38,6 +38,9 @@
     "enableTranslation": true,
     "nativeLanguage": "sr",
     "languages": ["sr", "en"],
-    "blueprints": []
+    "blueprints": [],
+    "herokuAppName": "frozen-refuge-07439",
+    "herokuDeployType": "git",
+    "herokuJavaVersion": "11"
   }
 }

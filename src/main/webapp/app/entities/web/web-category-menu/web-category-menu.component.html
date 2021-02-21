@@ -1,9 +1,7 @@
 <div>
-    <ul *ngFor="let product of productsCategory">
-        <li>
-            <a routerLink="web-product/{{product.id}}" routerLinkActive="active">  {{product.categoryName}}
-
-            </a>
-        </li>
-    </ul>
+  <ul *ngFor="let product of productsCategory">
+    <li>
+      <a routerLink="web-product/{{ product.id }}" routerLinkActive="active"> {{ product.categoryName }} </a>
+    </li>
+  </ul>
 </div>

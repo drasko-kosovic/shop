@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from '../../../shared/model/product.model';
-import { WebProductService } from './web-product.service';
+
 import { ActivatedRoute } from '@angular/router';
+import { WebProductService } from './web-product.service';
 
 @Component({
   selector: 'jhi-web-product',
@@ -10,14 +11,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class WebProductComponent implements OnInit {
   products?: IProduct[];
+  curentId?: number;
 
   constructor(protected productService: WebProductService, protected route: ActivatedRoute) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-
+    // this.curentId = +this.route.snapshot.paramMap.get('id');
     // eslint-disable-next-line no-console
     console.log('broj je -----------' + id);
+    // this.curentId=id;
     this.loadPage();
   }
 
@@ -27,6 +30,7 @@ export class WebProductComponent implements OnInit {
       // .queryId(1951)
       .subscribe(res => {
         this.products = res;
+
         // eslint-disable-next-line no-console
         // console.log('to je   ' + res);
       });
