@@ -12,6 +12,10 @@ const routes: Routes = [
         path: 'web-product/:id',
         component: WebProductComponent,
       },
+      {
+        path: 'search/:name',
+        component: WebProductComponent,
+      },
     ],
   },
   {

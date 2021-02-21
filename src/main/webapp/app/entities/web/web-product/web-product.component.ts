@@ -11,15 +11,24 @@ import { WebProductService } from './web-product.service';
 })
 export class WebProductComponent implements OnInit {
   products?: IProduct[];
+  searchMode: boolean | undefined;
+
   constructor(protected productService: WebProductService, protected route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+    // const id = this.route.snapshot.paramMap.get('id');
     this.route.queryParams.subscribe(queryParams => {
       // do something with the query params
     });
     this.route.params.subscribe(routeParams => {
       this.loadPageCategoryId();
+    });
+
+    this.route.queryParams.subscribe(queryParams => {
+      // do something with the query params
+    });
+    this.route.params.subscribe(routeParams => {
+      this.loadPageProductName();
     });
   }
 
@@ -33,7 +42,8 @@ export class WebProductComponent implements OnInit {
   }
 
   loadPageProductName(): void {
-    this.productService.queryName(this.route.snapshot.paramMap.get('name')).subscribe(res => {
+    const theKeyword: any = this.route.snapshot.paramMap.get('name');
+    this.productService.queryName(theKeyword).subscribe(res => {
       this.products = res;
 
       // eslint-disable-next-line no-console

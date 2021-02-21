@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'jhi-web-search',
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./web-search.component.scss'],
 })
 export class WebSearchComponent implements OnInit {
-  constructor() {}
+  constructor(protected router: Router) {}
 
   ngOnInit(): void {}
+
+  doSearch(value: string): void {
+    // console.log(`value=${value}`);
+    this.router.navigateByUrl(`web/search/${value}`);
+  }
 }
