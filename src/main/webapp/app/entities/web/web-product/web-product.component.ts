@@ -12,6 +12,7 @@ import { WebProductService } from './web-product.service';
 export class WebProductComponent implements OnInit {
   products?: IProduct[];
   searchMode: boolean | undefined;
+  idMode: boolean | undefined;
 
   constructor(protected productService: WebProductService, protected route: ActivatedRoute) {}
 
@@ -23,13 +24,6 @@ export class WebProductComponent implements OnInit {
     this.route.params.subscribe(routeParams => {
       this.listProducts();
     });
-
-    // this.route.queryParams.subscribe(queryParams => {
-    //   // do something with the query params
-    // });
-    // this.route.params.subscribe(routeParams => {
-    //   this.loadPageProductName();
-    // });
   }
 
   loadPageCategoryId(): void {
@@ -51,13 +45,22 @@ export class WebProductComponent implements OnInit {
     });
   }
 
+  loadPageAllProduct(): void {
+    this.productService.query().subscribe(res => {
+      this.products = res;
+    });
+  }
+
   listProducts(): void {
     this.searchMode = this.route.snapshot.paramMap.has('name');
-
+    this.idMode = this.route.snapshot.paramMap.has('id');
     if (this.searchMode) {
       this.loadPageProductName();
-    } else {
+    }
+    if (this.idMode) {
       this.loadPageCategoryId();
+    } else {
+      this.loadPageAllProduct();
     }
   }
 }

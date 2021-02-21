@@ -14,6 +14,7 @@ export class WebProductService {
   public resourceUrl = SERVER_API_URL + 'api/products';
   public resourceUrlProductCategoryId = SERVER_API_URL + 'api/products/category?ProductCategoryId=';
   public resourceUrlProductName = SERVER_API_URL + 'api/products/search?name=';
+  public resourceUrlProductId = SERVER_API_URL + 'api/products/';
 
   constructor(protected http: HttpClient) {}
 
@@ -27,5 +28,9 @@ export class WebProductService {
 
   query(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(this.resourceUrl);
+  }
+
+  queryProductId(id: any): Observable<IProduct> {
+    return this.http.get<IProduct>(this.resourceUrlProductId + id);
   }
 }
