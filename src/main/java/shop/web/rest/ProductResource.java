@@ -115,9 +115,15 @@ public class ProductResource {
     }
 
     @GetMapping("/products/category")
-    public ResponseEntity<List<Product>> productCategoryId(@RequestParam Long ProductCategoryId ) {
+    public ResponseEntity<List<Product>> productCategoryId(@RequestParam Long ProductCategoryId) {
 
         return ResponseEntity.ok().body(productService.findByProductCategoryId(ProductCategoryId));
+    }
+
+    @GetMapping("/products/search")
+    public ResponseEntity<List<Product>> productCategoryId(@RequestParam String name) {
+
+        return ResponseEntity.ok().body(productService.findByProductName(name));
     }
 
     /**
