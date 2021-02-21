@@ -21,15 +21,15 @@ export class WebProductComponent implements OnInit {
       // do something with the query params
     });
     this.route.params.subscribe(routeParams => {
-      this.loadPageCategoryId();
+      this.listProducts();
     });
 
-    this.route.queryParams.subscribe(queryParams => {
-      // do something with the query params
-    });
-    this.route.params.subscribe(routeParams => {
-      this.loadPageProductName();
-    });
+    // this.route.queryParams.subscribe(queryParams => {
+    //   // do something with the query params
+    // });
+    // this.route.params.subscribe(routeParams => {
+    //   this.loadPageProductName();
+    // });
   }
 
   loadPageCategoryId(): void {
@@ -49,5 +49,15 @@ export class WebProductComponent implements OnInit {
       // eslint-disable-next-line no-console
       // console.log('to je   ' + res);
     });
+  }
+
+  listProducts(): void {
+    this.searchMode = this.route.snapshot.paramMap.has('name');
+
+    if (this.searchMode) {
+      this.loadPageProductName();
+    } else {
+      this.loadPageCategoryId();
+    }
   }
 }
