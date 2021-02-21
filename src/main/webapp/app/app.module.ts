@@ -7,14 +7,12 @@ import { ShopCoreModule } from 'app/core/core.module';
 import { ShopAppRoutingModule } from './app-routing.module';
 import { ShopHomeModule } from './home/home.module';
 import { ShopEntityModule } from './entities/entity.module';
-// jhipster-needle-angular-add-module-import JHipster will add new module here
 import { MainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { PageRibbonComponent } from './layouts/profiles/page-ribbon.component';
 import { ActiveMenuDirective } from './layouts/navbar/active-menu.directive';
 import { ErrorComponent } from './layouts/error/error.component';
-import { AngularComponent } from './angular/angular.component';
 
 @NgModule({
   imports: [
@@ -26,15 +24,7 @@ import { AngularComponent } from './angular/angular.component';
     ShopEntityModule,
     ShopAppRoutingModule,
   ],
-  declarations: [
-    MainComponent,
-    NavbarComponent,
-    ErrorComponent,
-    PageRibbonComponent,
-    ActiveMenuDirective,
-    FooterComponent,
-    AngularComponent,
-  ],
+  declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
   bootstrap: [MainComponent],
 })
 export class ShopAppModule {}

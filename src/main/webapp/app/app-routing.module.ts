@@ -6,7 +6,6 @@ import { DEBUG_INFO_ENABLED } from 'app/app.constants';
 import { Authority } from 'app/shared/constants/authority.constants';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
-import { AngularComponent } from 'app/angular/angular.component';
 import { WebPageComponent } from 'app/entities/web/web-page/web-page.component';
 
 const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
