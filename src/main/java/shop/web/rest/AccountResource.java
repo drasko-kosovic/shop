@@ -24,6 +24,7 @@ import java.util.*;
 /**
  * REST controller for managing the current user's account.
  */
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api")
 public class AccountResource {
