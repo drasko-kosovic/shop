@@ -7,7 +7,6 @@ import { Authority } from 'app/shared/constants/authority.constants';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
 import { WebPageComponent } from 'app/entities/web/web-page/web-page.component';
-import { ProductDetailComponent } from 'app/entities/product/product-detail.component';
 
 const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
 
@@ -16,7 +15,11 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
     RouterModule.forRoot(
       [
         {
-          path: 'web',
+          path: '',
+          component: WebPageComponent,
+        },
+        {
+          path: '',
           loadChildren: () => import('./entities/web/web.module').then(m => m.WebModule),
         },
         {
