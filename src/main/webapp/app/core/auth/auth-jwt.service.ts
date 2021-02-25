@@ -6,6 +6,7 @@ import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
 
 import { SERVER_API_URL } from 'app/app.constants';
 import { Login } from 'app/core/login/login.model';
+import { Router } from '@angular/router';
 
 type JwtToken = {
   id_token: string;
@@ -13,7 +14,12 @@ type JwtToken = {
 
 @Injectable({ providedIn: 'root' })
 export class AuthServerProvider {
-  constructor(private http: HttpClient, private $localStorage: LocalStorageService, private $sessionStorage: SessionStorageService) {}
+  constructor(
+    private http: HttpClient,
+    private $localStorage: LocalStorageService,
+    private $sessionStorage: SessionStorageService,
+    private router: Router
+  ) {}
 
   getToken(): string {
     return this.$localStorage.retrieve('authenticationToken') || this.$sessionStorage.retrieve('authenticationToken') || '';
