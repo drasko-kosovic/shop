@@ -38,6 +38,9 @@
     "enableTranslation": true,
     "nativeLanguage": "sr",
     "languages": ["sr", "en"],
-    "blueprints": []
+    "blueprints": [],
+    "herokuAppName": "stormy-inlet-48259",
+    "herokuDeployType": "git",
+    "herokuJavaVersion": "11"
   }
 }

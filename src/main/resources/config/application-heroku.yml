@@ -12,7 +12,7 @@
 
 eureka:
   instance:
-    hostname: frozen-refuge-07439.herokuapp.com
+    hostname: stormy-inlet-48259.herokuapp.com
     non-secure-port: 80
     prefer-ip-address: false
 
