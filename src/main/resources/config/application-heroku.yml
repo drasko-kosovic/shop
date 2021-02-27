@@ -12,7 +12,7 @@
 
 eureka:
   instance:
-    hostname: stormy-inlet-48259.herokuapp.com
+    hostname: peaceful-stream-35025.herokuapp.com
     non-secure-port: 80
     prefer-ip-address: false
 
