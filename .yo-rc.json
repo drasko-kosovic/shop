@@ -39,7 +39,7 @@
     "nativeLanguage": "sr",
     "languages": ["sr", "en"],
     "blueprints": [],
-    "herokuAppName": "prodavnica-menagment",
+    "herokuAppName": "prodavnica-managment",
     "herokuDeployType": "git",
     "herokuJavaVersion": "11"
   }
