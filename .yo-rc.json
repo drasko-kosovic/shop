@@ -39,7 +39,7 @@
     "nativeLanguage": "sr",
     "languages": ["sr", "en"],
     "blueprints": [],
-    "herokuAppName": "peaceful-stream-35025",
+    "herokuAppName": "prodavnica-menagment",
     "herokuDeployType": "git",
     "herokuJavaVersion": "11"
   }
