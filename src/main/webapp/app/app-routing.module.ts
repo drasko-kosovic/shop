@@ -7,6 +7,7 @@ import { Authority } from 'app/shared/constants/authority.constants';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
 import { WebPageComponent } from 'app/entities/web/web-page/web-page.component';
+import { HomeComponent } from 'app/home/home.component';
 
 const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
 
@@ -16,7 +17,7 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
       [
         {
           path: '',
-          component: WebPageComponent,
+          component: HomeComponent,
         },
         {
           path: '',
